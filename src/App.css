@@ -1,0 +1,93 @@
+/* App.css */
+
+/* Full page container */
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* Takes most of the screen height */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Scrollable message area */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+/* Optional: Different colors for user vs robot */
+.chat-message.robot {
+  align-self: flex-start;
+  background: #f0f0f0;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: #007bff;
+  color: white;
+  flex-direction: row-reverse; /* Puts the icon on the right */
+}
+
+.chat-message img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Layout Wrapper */
+/* Update this in your App.css */
+.chat-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 90vw;        /* Responsive width */
+  max-width: 800px;   /* Cap width so it doesn't get too wide */
+  margin: 0 auto;     /* Centers the app on the page */
+  background: #fcfcfc;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* The scrollable list of messages */
+.messages-area {
+  flex: 1; /* Takes all available space */
+  overflow-y: auto; /* Adds scrollbar if content exceeds height */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* The Input area at the bottom */
+.input-area {
+  padding: 20px;
+  background: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 10px;
+}
+
+/* Styling your existing ChatMessage component */
+.chat-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 15px;
+  width: fit-content;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
