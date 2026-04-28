@@ -1,1 +1,1 @@
-# This project-based React series helps you bridge the gap between theory and practice. Through consistent exercises and real-world projects using React, JavaScript, HTML, and CSS, you’ll gain the deep understanding necessary to build professional-grade web applications.
+# ChatBot
