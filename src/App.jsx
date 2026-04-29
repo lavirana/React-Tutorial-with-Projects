@@ -1,46 +1,36 @@
-import { useState } from "react";
-import "./App.css";
-import ChatMessage from "./components/ChatMessage";
+import React, { useState } from "react";
+import ChatMessages from "./components/ChatMessages";
 import ChatInput from "./components/ChatInput";
+import "./App.css";
 
-function App() {
-  const chatMessages = [
+const App = () => {
+  const [chatMessages, setChatMessages] = useState([
     {
       message: "hello chatbot",
       sender: "user",
+      id: "id1",
     },
     {
       message: "hello! how can i help you",
       sender: "robot",
+      id: "id2",
     },
-    {
-      message: "what time is it?",
-      sender: "user",
-    },
-    {
-      message: "its 3:00 pm",
-      sender: "robot",
-    },
-  ];
+  ]);
 
   return (
     <div className="chat-app">
       <div className="messages-area">
-        {chatMessages.map((chatMessage) => {
-          return (
-            <ChatMessage
-              message={chatMessage.message}
-              sender={chatMessage.sender}
-            />
-          );
-        })}
+        <ChatMessages chatMessages={chatMessages} />
       </div>
 
       <div className="input-area">
-        <ChatInput />
+        <ChatInput
+          chatMessages={chatMessages}
+          setChatMessages={setChatMessages}
+        />
       </div>
     </div>
   );
-}
+};
 
 export default App;
